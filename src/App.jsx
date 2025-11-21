@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
+import Logout from './components/Logout'
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
           </ul>
         </nav>
 
+        <Logout />
     </div>
   )
 }

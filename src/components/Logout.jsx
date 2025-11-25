@@ -1,11 +1,17 @@
 import React from 'react'
 import { getAuth, signOut } from "firebase/auth";
 import app from '../firebase/firebase.config';
+import { useAuth } from '../context/AuthContext';
 
 const Logout = () => {
-    const handleLogout = () => {
 
-                const auth = getAuth(app);
+    const {currentUser} = useAuth();
+    console.log(currentUser)
+
+
+    const auth = getAuth(app);
+
+    const handleLogout = () => {
 
                 signOut(auth).then(() => {
                 // Sign-out successful.
@@ -17,7 +23,8 @@ const Logout = () => {
         console.log("Logout Button Clicked")
     }
   return (
-    <div className='mt-8'>
+    <div className='my-8'>
+            <p className='font-medium mb-3'>User: {currentUser?.displayName}</p>
             <button onClick={handleLogout} className='px-5 py-2 bg-red-500 font-semibold rounded'>Logout</button>
     </div>
   )

@@ -24,7 +24,7 @@ const Logout = () => {
     }
   return (
     <div className='my-8'>
-            <p className='font-medium mb-3'>User: {currentUser?.displayName}</p>
+            <p className='font-medium mb-3'>User: {currentUser?.displayName || "Not set yet"}</p>
             <button onClick={handleLogout} className='px-5 py-2 bg-red-500 font-semibold rounded'>Logout</button>
     </div>
   )
